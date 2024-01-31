@@ -183,3 +183,26 @@ router.put('/decrementProductQuantity', async (req, res) => {
 
 
 module.exports = router;
+
+
+
+// Delete api ...
+
+
+router.delete("/deleteProduct/:id", async (req, res) => {
+
+  try {
+
+    const { id } = req.params
+
+    const deleteProduct = await product.findByIdAndDelete({ _id: id })
+    console.log("DeleteProduct is :- ", deleteProduct)
+    res.status(201).json({ deleteProduct, message: "Delete Product SuccessFully" })
+
+  } catch (error) {
+    console.log("Delete Product Error is :- ", error)
+    // res.status(422).json(error)
+    res.json(error)
+  }
+
+})
