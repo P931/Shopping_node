@@ -181,13 +181,7 @@ router.put('/decrementProductQuantity', async (req, res) => {
   }
 });
 
-
-module.exports = router;
-
-
-
 // Delete api ...
-
 
 router.delete("/deleteProduct/:id", async (req, res) => {
 
@@ -206,3 +200,8 @@ router.delete("/deleteProduct/:id", async (req, res) => {
   }
 
 })
+
+
+module.exports = router;
+
+
